@@ -5,39 +5,15 @@ if (Modernizr.localstorage) {
 	// maybe try dojox.storage or a third-party solution
 }
 
-// Displays LocalStorage in Input fields & in sidebar
-$(document).ready(function () {
-	$('input#breakfast').val(localStorage["breakfast"]);
-	$('h2#breakfast-total span').append(localStorage["breakfast"]);
-	
-	$('input#lunch').val(localStorage["lunch"]);
-	$('h2#lunch-total span').append(localStorage["lunch"]);
-	
-	$('input#dinner').val(localStorage["dinner"]);
-	$('h2#dinner-total span').append(localStorage["dinner"]);
+$('p#go').click(function() {
+    localStorage[$('input.store').attr('name')] = $('input.store').val();
+	$('h1 span').empty().append(localStorage["fanny"]);
 });
 
-// Saves Input data (from input.stored) as LocalStorage
-$('.stored').keyup(function () {
-    localStorage[$(this).attr('id')] = $(this).val();
-});
-
-// Displays LocalStorage on Click
-$('p#display-breakfast').click(function() {
-	alert( "I munched " + localStorage.getItem('breakfast') + " calories for breakfast.");
-});
-
-$('p#display-lunch').click(function() {
-	alert( "I munched " + localStorage.getItem('lunch') + " calories for lunch.");
-});
-
-$('p#display-dinner').click(function() {
-	alert( "I munched " + localStorage.getItem('dinner') + " calories for dinner.");
-});
 
 // Clears data and Input values
-$('p#clear').click(function() {
+$('p#reset').click(function() {
     localStorage.clear();
 	$("input").val('');
+	$('h1 span').empty().html('0');
 });
-
