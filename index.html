@@ -38,11 +38,11 @@
 	<div id="main" class="container">
 		<div class="row clearfix">
 			
-			<form class="twelvecol last">
+			<form class="sixcol">
 			    
 				<fieldset>
 					<label>Breakfast:</label>
-			    	<input type="text" name="breakfast" id="breakfast" class="stored" />
+			    	<input type="text" id="breakfast" class="stored" />
 				</fieldset>
 			
 				<p class="button" id="display-breakfast">
@@ -51,17 +51,42 @@
 				
 				<fieldset>
 					<label>Lunch:</label>
-			    	<input type="text" name="lunch" id="lunch" class="stored" />
+			    	<input type="text" id="lunch" class="stored" />
 				</fieldset>
 					
 				<p class="button" id="display-lunch">
 					How many calories in lunch
+				</p>
+				
+				<fieldset>
+					<label>Dinner:</label>
+			    	<input type="text" id="dinner" class="stored" />
+				</fieldset>
+					
+				<p class="button" id="display-dinner">
+					How many calories in dinner
 				</p>
 			
 				<p class="button" id="clear">
 					Clear Data
 				</p>
 			</form>
+			
+			<div class="sixcol last">
+				
+				<h2 id="breakfast-total">
+					Breakfast: <span></span>
+				</h2>
+				
+				<h2 id="lunch-total">
+					Lunch: <span></span>
+				</h2>
+				
+				<h2 id="dinner-total">
+					Dinner: <span></span>
+				</h2>
+				
+			</div>
 			
 		</div>
 	</div>
