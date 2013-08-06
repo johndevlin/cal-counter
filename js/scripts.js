@@ -25,6 +25,7 @@ var total = Number(breakfast) + Number(lunch) + Number(dinner) + Number(snacks);
 // Printing localstorage date to table
 
 $(document).ready(function() {
+	
 	// Set the total in a H1's span onload
 	$('h1 span').empty().append(total);
 	
@@ -33,6 +34,7 @@ $(document).ready(function() {
 	$('td#lunch-total').empty().append(lunch);
 	$('td#dinner-total').empty().append(dinner);
 	$('td#snacks-total').empty().append(snacks);
+	
 });
 
 
@@ -44,10 +46,18 @@ $(document).ready(function() {
 $('p#go').click(function() {
 	
 	// Gets data from input
-    localStorage[$('select option:selected').attr('value')] = $('input.store').val();
+	var id = $('select option:selected').attr('value');
+	var addval = $('input.store').val();
+	var totalval = addval + localStorage.getItem( id );
+	
+	store.get('username')
+	
+    localStorage[id] = addval;
 	
 	// Prints data to H1
 	$('h1 span').empty().append(total);
+	
+	alert( totalval )
 	
 	// Reload page
 	location.reload();
