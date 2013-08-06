@@ -48,16 +48,15 @@ $('p#go').click(function() {
 	// Gets data from input
 	var id = $('select option:selected').attr('value');
 	var addval = $('input.store').val();
-	var totalval = addval + localStorage.getItem( id );
+	var foo = localStorage.getItem( id );
+	var totalval = Number(addval) + Number(foo)
 	
 	store.get('username')
 	
-    localStorage[id] = addval;
+    localStorage[id] = totalval;
 	
 	// Prints data to H1
 	$('h1 span').empty().append(total);
-	
-	alert( totalval )
 	
 	// Reload page
 	location.reload();
